@@ -112,23 +112,24 @@
 
 		/* Cert */
 
-			#cert {
-				-ms-behavior: url("assets/js/ie/backgroundsize.min.htc");
-				background: url("../../images/cert.jpg");
-				background-size: cover;
-			}
 
-				#cert .content {
-					position: relative;
-					z-index: 1;
-				}
+	#cert {
+		-ms-behavior: url("assets/js/ie/backgroundsize.min.htc");
+		background: url("../../images/cert.jpg");
+		background-size: cover;
+	}
 
-				#cert.left:before, #cert.right:after {
-					content: '';
-					background: url("images/overlay.png");
-					width: 100%;
-					height: 100%;
-					position: absolute;
-					left: 0;
-					top: 0;
-				}
+		#cert .content {
+			position: relative;
+			z-index: 1;
+		}
+
+		#cert.left:before, #cert.right:after {
+			content: '';
+			background: url("images/overlay.png");
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			left: 0;
+			top: 0;
+		}
