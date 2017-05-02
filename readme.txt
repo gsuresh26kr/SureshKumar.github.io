@@ -1,127 +1,194 @@
-==================================================================================================
-
-DESCRIPTION:
-
-INFINITY is a clean, modern and well crafted responsive template designed for creatives and agencies. 
-The template suits the needs of creative agencies, freelancers, and even small business websites. 
-Infinity is mobile and retina/hi-dpi ready which means your site will look awesome, crisp and sharp 
-on any screen resolutions and devices. Also, the code behind infinity is clean and well organized 
-which makes the template very easy to customize.
-
-==================================================================================================
+Big Picture by HTML5 UP
+html5up.net | @ajlkn
+Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 
 
-LICENSE:
+This is Big Picture, a simple, single page responsive site template by HTML5 UP.
+
+So I've been on a single page kick as of late, partly because I'm lazy, but
+mostly because they kick ass for experimentation. In this case, Big Picture
+makes heavy use of my (tentatively named and soon to be released) "scrollgress"
+and "scrollwatch" jQuery plugins to pull off some interesting effects as you
+scroll around the page. In addition to said interesting effects, Big Picture
+also includes a nice lightbox-style gallery, styling for basic page elements,
+and thoroughly commented code for your editing pleasure (with instructions!
+-- see below).
+
+Many thanks to my good friends Felicia Simion (ineedchemicalx.deviantart.com)
+and Michael Domaradzki (md.photomerchant.net) for allowing me to use their amazing
+photos in Big Picture's demo*.
+
+(* = Not included! Only meant for use with my own on-site demo, so please do NOT
+download and/or use any of Felicia's or Michael's work without their explicit
+permission!)
+
+AJ
+aj@lkn.io | @ajlkn
+
+PS: Not sure how to get that contact form working? Give formspree.io a try (it's awesome).
 
 
-INFINITY is released under the Creative Commons Attribution 3.0 License
-(http://creativecommons.org/licenses/by/3.0/). This means that you are free:
+Instructions:
 
-   to Share - to copy, distribute, display, and perform the work
-   to Remix - to make derivative works
-   to make commercial use of the work 
+	Overview:
 
-Under the following conditions:
+		Being a single pager, Big Picture should be way simpler to work with than
+		some of the heavier stuff I've released in the past. In fact, aside from
+		a main page <header> and <footer>, it's pretty much just a stack of "main"
+		<section> elements that follow the same basic pattern:
 
-   Attribution - You must attribute the work in the manner specified by the 
-   author or licensor (but not in any way that suggests that they endorse you 
-   or your use of the work). 
+			<section id="foobar" class="main">
+				<div class="content container">
+					<header>
+						<h2>Foobar</h2>
+					</header>
+					...
+				</div>
+			</section>
 
-   For any reuse or distribution, you must make clear to others the license 
-   terms of this work
+		The section can then be assigned a style class to determine its basic
+		look (and, in some cases, its behavior):
 
-   Any of these conditions can be waived if you get permission from the 
-   copyright holder
+			style1
+				Centered content with an oversized <h2>. Works best when
+				paired with a background image or color.
 
-Attribution: 
-	
-   You must include a credit link to our website(http://www.Styleshout.com) somewhere on
-   your site. We prefer the footer credit that comes with the template but you are still 
-   free to move it somewhere else.
+			style2 left
+				Content in a box, anchored to the left side of the window. Works
+				best when paired with a background image or color. If you have
+				"useSectionTransitions" turned on in your settings, the box will
+				slide into view from the left.
 
+			style2 right
+				Content in a box, anchored to the right side of the window. Works
+				best when paired with a background image or color. If you have
+				"useSectionTransitions" turned on in your settings, the box will
+				slide into view from the right.
 
------------------------------------------------------------------------------------------------------
+			style3 primary
+				Used for generic content. Set against the primary background
+				color (default is white).
 
+			style3 secondary
+				Used for generic content. Set against the secondary background
+				color (default is a light gray).
 
-REMOVING THE LINK:
+		Oh, and there are a few (well, two) optional modifier classes you can
+		tack on for additional effects:
 
-We understand that there are situations where you want to use the template without the 
-crediting obligation. If that's your case, you can always send us a 
-credit removal fee of 10 USD through Paypal. This will allow you to use the 
-template attribution/credit link free on ONE DOMAIN name. 
+			dark
+				Flips the content's color scheme so it shows up better
+				against darker background images and colors.
 
-You can send your payments through Paypal to this address: ealigam@gmail.com
-
-If possible, kindly send us the site's url where the template is being used. 
-Also, keep your Paypal receipt as proof of payment and your good to go.
-
-
------------------------------------------------------------------------------------------------------- 
-
-
-SUPPORT:
-    
-Since INIFINITY is distributed for free, support is not offered. INFINITY is coded according 
-to current web standards and we did our best to make the template easy to use and modify.
-If you have minimum web development experience, you can easily modify the template. 
-However, If you're still new to HTML and CSS, I suggest that you visit the 
-following tutorials:
-
- - http://tutsplus.com/course/30-days-to-learn-html-and-css/
- - http://learn.shayhowe.com/html-css/
-
-These will teach you the essentials of HTML and CSS. In addition, if you want to include
-jQuery in your skill-set, you can also check out these tutorials: 
-
- - http://code.tutsplus.com/courses/30-days-to-learn-jquery
- - http://try.jquery.com/
+			fullscreen
+				Makes the section fill the entire window (only if "useFullScreen"
+				is enabled in your settings).
 
 
------------------------------------------------------------------------------------------------------- 
+	Lightbox Gallery:
+
+ 		The actual gallery function is powered by my Poptrox plugin. For info on
+ 		how that works, go here: github.com/ajlkn/jquery.poptrox
+
+		Rows:
+
+		 	The structure of the gallery is a skel grid. Each row looks like this:
+
+			 	<div class="row flush images">
+			 		<div class="6u">...<div>
+			 		<div class="6u">...<div>
+			 	</div>
+
+			The "Xu" class indicates the width of the cell (in this case, both are 6).
+			You can use any number of cells and any combination of widths provided their
+			combined widths add up to exactly 12. So, if you needed, say, three images
+			in a row, you can do something like this:
+
+			 	<div class="row flush images">
+			 		<div class="4u">...<div>
+			 		<div class="4u">...<div>
+			 		<div class="4u">...<div>
+			 	</div>
+
+			You can also use a "-Xu" class to "nudge" a cell over by that much, which
+			comes in handy if you need to place just one image on a row and you want
+			to center it:
+
+			 	<div class="row flush images">
+			 		<div class="6u -3u">...<div>
+			 	</div>
+
+			Which translates to "make this 6 wide and nudge it over to the right by
+			another 3".
+
+		Images:
+
+			Each image (the '...' bit in the above examples) should look like this:
+
+				<a href="path/to/fullsize.jpg" class="image fit from-(direction)">
+					<img src="path/to/thumbnail.jpg" title="This is the image caption." alt="" /></a>
+				</div>
+
+			The "from-(direction)" class indicates the direction from which the image should
+			slide into view, and can be any of the following:
+
+				from-left
+				from-right
+				from-bottom
+				from-left
+
+			You can also just remove the "from-(direction)" class if you don't want that particular
+			image to slide into view (in which case it'll simply fade in).
 
 
-GET THE LATEST VERSION:
+	Contact Form:
 
-We update our templates on a regular basis so to make sure that you have the latest version, 
-always download the template files directly on our website(http://www.styleshout.com/)
-
-
-
--------------------------------------------------------------------------------------------------------
+		To get this working, place a script on your server to receive the form data, then
+		point the "action" attribute to it (eg. action="http://mydomain.tld/mail.php").
+		More on how it all works here: 1stwebdesigner.com/tutorials/custom-php-contact-forms
 
 
-SOURCES AND CREDITS:
+    Icons:
 
-I've used the following resources as listed.
-
-Fonts:
- - Montserrat Font (https://www.google.com/fonts/specimen/Montserrat)
- - Libre Baskerville Font (https://fonts.google.com/specimen/Libre+Baskerville) 
-
-Icons:
- - Font Awesome (http://fortawesome.github.io/Font-Awesome/)
- - Micons Free Icons (http://geticonjar.com/freebies/231-micons/)
- - Webfont generated by ICOMOON (https://icomoon.io/)
-
-Stock Photos and Graphics:
- - Pexels.com (https://www.pexels.com/)
- - Picjumbo.com (https://picjumbo.com/)
- - RawPixels.com (https://www.rawpixel.com/)
- 
-Javascript Files:
-
- - JQuery (http://jquery.com/)
- - Modernizr (http://modernizr.com/)
- - Waypoints (http://imakewebthings.com/jquery-waypoints/)
- - jQuery Placeholder (https://github.com/mathiasbynens/jquery-placeholder)
- - FitVids (http://fitvidsjs.com/)
- - pace js (http://github.hubspot.com/pace/)
- - LightGallery (http://sachinchoolur.github.io/lightGallery/) 
- - Masonry (http://masonry.desandro.com/)
- - ImagesLoaded (http://masonry.desandro.com/)
- - jQueryValidation (https://jqueryvalidation.org/)
- - ajaxChimp (https://github.com/scdoshi/jquery-ajaxchimp)
+     	Powered by Font Awesome. Go here for a full listing of all the icons you can use:
+     	fortawesome.github.io/Font-Awesome/cheatsheet
 
 
+	Other Stuff:
 
--------------------------------------------------------------------------------------------------------
+		- If you don't like the way images are tinted, either change "images/overlay.png"
+		  to something else, or remove all references to it from css/style.css.
+
+		- If you plan to keep support for IE8 (what little there is), don't forget to update
+		  css/ie/ie8.css as you change other stuff.
+
+
+Credits:
+
+	Demo Images:
+		Felicia Simion (ineedchemicalx.deviantart.com)
+			"The Swallow Song"
+			"Mind is a clear stage"
+			"The Anonymous Red"
+			"The sparkling shell"
+			"Carry on"
+
+		Michael Domaradzki (md.photomerchant.net)
+			"Vine Country"
+			"Airchitecture II"
+			"Bent IX"
+			"Air Lounge"
+
+	Icons:
+		Font Awesome (fortawesome.github.com/Font-Awesome)
+
+	Other:
+		jQuery (jquery.com)
+		html5shiv.js (@afarkas @jdalton @jon_neal @rem)
+		CSS3 PIE (css3pie.com)
+		background-size polyfill (github.com/louisremi)
+		Respond.js (j.mp/respondjs)
+		jquery.poptrox (@ajlkn)
+		jquery.scrolly (@ajlkn)
+		jquery.scrollgress (@ajlkn)
+		Skel (skel.io)
